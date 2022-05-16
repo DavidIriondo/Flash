@@ -15,7 +15,7 @@ public class HomeControllerImpl implements HomeController{
     @GetMapping()
     public String homePage() {
         // TODO Auto-generated method stub
-        return "templates/menu";
+        return "templates/main";
     }
     
 }
