@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:fragment="main-head">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/constants.css">
-    <title>Flash</title>
+<head>
+   <th:block th:fragment="main-head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="Description" content="Enter your description here"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/constants.css">
+        <title>Flash</title>
+   </th:block>
 </head>
 <body>
     <div class="container-flow">
@@ -27,10 +29,10 @@
                 <!--Menu options-->
                 <div class="collapse navbar-collapse justify-content-end" id="menu">
                     <nav class="navbar-nav">
-                    <a class="nav-link white-flash-c" href="#">Home</a>
+                    <a class="nav-link white-flash-c" href="/flash/v1/home">Home</a>
                     <a class="nav-link white-flash-c" href="#">Projects</a>
                     <a class="nav-link white-flash-c" href="#">Template</a>
-                    <a class="nav-link white-flash-c" href="#">About us</a>
+                    <a class="nav-link white-flash-c" href="/flash/v1/about-us">About us</a>
                     <a class="nav-link white-flash-c" href="#">Login</a>
                     </nav>
                 </div>

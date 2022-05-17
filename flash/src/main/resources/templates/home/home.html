@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head th:replace="templates/main :: main-head">
-    <link rel="stylesheet" href="/css/home.css">
+<head>
+    <th:block th:replace="templates/main :: main-head">
+    </th:block>
 </head>
 <body>
-   <div class="container-flow h-100 ">
+   <div class="container-flow h-100 blue-flash-b">
         <!--MENU NAVBAR-->
         <div th:replace="templates/main :: main-menu"></div>
         <!--MAIN CONTENT-->
-        <div class="row blue-flash-b justify-content-center h-100">
+        <div class="row blue-flash-b justify-content-center">
             <!--Left div-->
-            <div class="col-lg-6 p-4 white-flash-c">
+            <div class="col-lg-6 p-4 white-flash-c d-flex">
                 <div class="pt-sm-5">
-                    <p class="display-3">Make your project easy to <span class="font-weight-bold">Build</span></p>
+                    <p class="display-3 pt-sm-5">Make your project easy to <span class="font-weight-bold">Build</span></p>
                     <p class="font-weight-light">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,

@@ -1,0 +1,9 @@
+
+
+@media (min-width: 992px) {
+    .vertical-text{
+        width:1px;
+        word-wrap: break-word;
+        white-space:pre-wrap; 
+     }
+}
