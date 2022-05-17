@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head th:fragment="main-head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="/css/constants.css">
     <title>Flash</title>
 </head>
-<body class="blue-flash-b">
+<body>
     <div class="container-flow">
         <!--Menu-->
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
+        <div class="row  blue-flash-b justify-content-center sticky-top" th:fragment="main-menu">
+            <div class="col-lg-10">
                 <!--Main tag-->
             <nav class="navbar navbar-expand-lg ">
                 <!--Logo tag-->
@@ -38,34 +38,6 @@
             </div>
         </div>
         <!--Main content-->
-        <div class="row blue-flash-b justify-content-center">
-            <!--Left div-->
-            <div class="col-lg-6  p-4  d-flex align-items-center white-flash-c">
-                <div class="pb-lg-5">
-                    <p class="display-3">Make your project easy to <span class="font-weight-bold">Build</span></p>
-                    <p class="font-weight-light">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley
-                    </p>
-                    <button type="button" class="btn btn-outline-light font-weight-bold rounded-pill">New project</button>
-                </div>
-            </div>
-            <!--Right div-->
-            <div class="col-lg-4 d-none d-lg-block  p-5 text-center white-flash-c">
-                <img src="/img/home-icon.svg" alt="" class="img-fluid">
-                <h3 class="font-weight-bold">1000</h3>
-                <p class="font-weight-light">coders has visited this page</p>
-            </div>
-        </div>
-
-        <!--FOOTER-->
-        <div class="row fixed-bottom">
-            <div class="col">
-                <p class="white-flash-c text-center "><small>License provided by creative commons</small></p>
-            </div>
-        </div>
-
     </div>
 
     
