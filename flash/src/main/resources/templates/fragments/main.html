@@ -30,10 +30,10 @@
                 <div class="collapse navbar-collapse justify-content-end" id="menu">
                     <nav class="navbar-nav">
                     <a class="nav-link white-flash-c" href="/flash/v1/home">Home</a>
-                    <a class="nav-link white-flash-c" href="#">Projects</a>
-                    <a class="nav-link white-flash-c" href="#">Template</a>
+                    <a class="nav-link white-flash-c" href="/flash/v1/project">Projects</a>
+                    <a class="nav-link white-flash-c disabled" href="#">Template</a>
                     <a class="nav-link white-flash-c" href="/flash/v1/about-us">About us</a>
-                    <a class="nav-link white-flash-c" href="#">Login</a>
+                    <a class="nav-link white-flash-c disabled" href="#">Login</a>
                     </nav>
                 </div>
             </nav>
@@ -42,10 +42,10 @@
         <!--Main content-->
     </div>
 
-    
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <th:block th:fragment="main-bootstrap-scripts">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    </th:block>
 </body>
 </html>

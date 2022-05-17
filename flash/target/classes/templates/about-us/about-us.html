@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <th:block th:replace="templates/main :: main-head">
+    <th:block th:replace="fragments/main :: main-head">
     </th:block>
     <link rel="stylesheet" href="/css/about-us.css">
 </head>
 <body>
     <div class="container-flow h-100 white-flash-b">
             <!--MENU-->
-        <div th:replace="templates/main :: main-menu"></div>
+        <div th:replace="fragments/main :: main-menu"></div>
         <div class="w100"></div>
         <div class="row  justify-content-center h-75 ">
             <div class="w-100"></div>
@@ -32,5 +32,6 @@
             </div>
         </div>
     </div>
+    <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
 </body>
 </html>
