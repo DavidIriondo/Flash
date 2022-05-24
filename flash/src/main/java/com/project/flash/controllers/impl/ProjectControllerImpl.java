@@ -17,4 +17,10 @@ public class ProjectControllerImpl implements ProjectController{
         // TODO Auto-generated method stub
         return "project/project";
     }
+
+    @GetMapping("/file")
+    public String filePage() {
+        // TODO Auto-generated method stub
+        return "file";
+    }
 }

@@ -1,4 +1,0 @@
-blue =  #1597E5
-white = #F8FDFF
-black = #052B42
-red = #E75454
