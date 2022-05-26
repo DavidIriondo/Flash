@@ -19,6 +19,9 @@
   background-color: #1597E5;
 }
 
+.btn-pkg-delete:hover{
+  color: #1597E5;
+}
 .card-desactivated{
   color: #fff;
   background-color: #6c757d;
