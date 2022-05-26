@@ -16,7 +16,7 @@
     <div class="container-flow">
         <!--MENU NAVBAR-->
         <div th:replace="fragments/main :: main-menu"></div>
-        <!--MAIN CONTENT-->
+        <!--MAIN CONTENT , FORM AND PACKAGE SELECTOR-->
         <div class="row justify-content-center">
             <!--FORM-->
             <div class="col-lg-5 border-right flex-column p-4 mt-4">
@@ -49,30 +49,42 @@
             <div class="col-lg-5 p-4 mt-4">
                 <div class="d-flex justify-content-between">
                     <p class="font-weight-bold">Packages</p>
-                    <p><i class="fas fa-plus-square"></i></p>
+                    <p data-toggle="modal" data-target=".bd-example-modal-lg" id="modal-button"><i class="fas fa-plus-square"></i></p>
                 </div>
-                <div class=" mt-3" id="packages-container">
-                    <!--CARDS-->
+                <div class=" mt-3 border-danger border" id="packages-container">
+                    <!--PACKAGES SELECTED-->
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title">Flask Login</h5>
                             <div class="d-flex justify-content-between">
-                                <p class="card-text mr-2">
+                                <p class="card-text mr-2 text-truncate">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                     Ut vestibulum vitae arcu vitae commodo. Aliquam felis metus, venenatis aliquam mi in,
-                                      tristique suscipit orci
+                                    Ut vestibulum vitae arcu vitae commodo. Aliquam felis metus, venenatis aliquam mi in,
+                                    tristique suscipit orci
                                 </p>
                                 <p>
                                     <i class="fas fa-times-circle red-flash-c"></i>
                                 </p>
                             </div>
                         </div>
-                    </div>
-                   
+                    </div>                   
                 </div>
+                <!--PACKAGE POP UP WINDOW-->
+                <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Flask Packages</h5>
+                        </div>
+                        <div class="modal-body" id="packages-options-container">
+                            <!--PACKAGES GO HERE-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
             </div>
         </div>
-        <!--BUTTONS-->
+        <!--GENERATE PROJECT AND CANCEL BUTTONS-->
         <div class="row justify-content-center">
             <div class="col-lg-3  mt-3 ">
                 <div class=" align-items-center d-flex justify-content-center">
@@ -83,6 +95,8 @@
         </div>
     </div>
     <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/dc6611e35b.js" crossorigin="anonymous"></script>
+    <script src="/js/flask-packages/main.js" type="module"></script>
 </body>
 </html>

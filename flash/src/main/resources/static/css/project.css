@@ -1,0 +1,26 @@
+/*display modal window button*/
+#modal-button:hover{
+  color: #1597E5;
+}
+
+#packages-container{
+  overflow-y: auto;
+  max-height: 470px;
+}
+
+#packages-options-container{
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+/*Change card color*/
+.card-hover:hover{
+  color: #F8FDFF;
+  background-color: #1597E5;
+}
+
+.card-desactivated{
+  color: #fff;
+  background-color: #6c757d;
+}
+

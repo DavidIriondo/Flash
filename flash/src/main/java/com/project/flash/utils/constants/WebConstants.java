@@ -13,4 +13,8 @@ public class WebConstants {
 
     //Resources
     public static final String RESOURCE_ID = "/{id}";
+
+    //Rest
+    public static final String REST_CONTENT = "/rest";
+    public static final String PACKAGES_REST = "/packages";
 }
