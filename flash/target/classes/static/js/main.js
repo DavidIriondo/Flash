@@ -3,19 +3,45 @@ import {Project} from "/js/folders/project.js";
 //Creating zip object
 var zip = new JSZip();
 
-//Creating project
-let project = new Project("demo", zip);
-project.buildProject();
-
 //Generating project to download
-jQuery("#blob").on("click", function () {
+$("#generate-project-button").click(function () {
     console.log("BOTON PULSADO")
-    project.getProject().generateAsync({type:"blob"}).then(function (blob) { // 1) generate the zip file
-        saveAs(blob, project.getName());                          // 2) trigger the download
+    //get form and transform it into map
+    let map = createMap($("#project-data-form").serializeArray());
+    let list = getpackageList();
+
+    //Creating project
+    let project = new Project(map, list, zip);
+    project.buildProject();
+
+    //Descargamos el proyecto 
+    project.getProject().generateAsync({type:"blob"}).then(function (blob) { 
+        saveAs(blob, project.getName());                          
     }, function (err) {
-        jQuery("#blob").text(err);
+        jQuery("#generate-project-button").text(err);
     });
-});
+})
+
+
+function createMap(form) {
+    let formMap = new Map();
+    form.forEach(element => {
+        formMap.set(element.name, element.value.trim())
+    });
+    return formMap;
+}
+
+function getpackageList() {
+    let list = new Array();
+    
+    $(".pkg-card").each(function () {
+        let pkg = $(this).children().attr('id');
+        let id = pkg.substr(pkg.length - 1);
+        list.push(id);
+    })
+
+    return list;
+}
 
 
 console.log("HELLO CURIOUS USER!!")

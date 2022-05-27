@@ -4,21 +4,25 @@ export class Requirements{
     return "requirements.txt"
   }
 
-  getContent(){
-    return `alembic==1.7.7
-click==8.1.3
-colorama==0.4.4
-Flask==2.1.2
-Flask-Migrate==3.1.0
-Flask-SQLAlchemy==2.5.1
-greenlet==1.1.2
-importlib-metadata==4.11.3
-itsdangerous==2.1.2
-Jinja2==3.1.2
-Mako==1.2.0
-MarkupSafe==2.1.1
-SQLAlchemy==1.4.36
-Werkzeug==2.1.2
-zipp==3.8.0`;
+  getContent(list){
+
+    this.listTxt = new Array();
+
+    const data = JSON.parse(window.localStorage.getItem('package-list'));
+
+    list.forEach(element => {
+      //Search data from full list of packages
+      data.forEach(element2 => {
+        //Loop list until find the id of the package
+        if(element2.id == element){
+          this.listTxt.push(element2.requirementName);
+        }
+      });
+
+    });
+
+    console.log(this.listTxt)
+
+    return this.listTxt.join("\r\n");
   }
 }

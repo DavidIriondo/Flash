@@ -20,28 +20,28 @@
         <div class="row justify-content-center">
             <!--FORM-->
             <div class="col-lg-5 border-right flex-column p-4 mt-4">
-                <form>
+                <form id="project-data-form">
                     <p class="font-weight-bold">Project</p>
                     <div class="form-group">
                       <label>Name</label>
-                      <input type="text" class="form-control text-truncate" placeholder="Enter the name">
+                      <input type="text" class="form-control text-truncate" placeholder="Enter the name" name="project-name">
                     </div>
                     <div class="form-group">
                       <label>Description</label>
-                      <textarea type="text" class="form-control text-truncate" placeholder="Enter the description - README.txt"></textarea>
+                      <textarea type="text" class="form-control text-truncate" placeholder="Enter the description - README.txt" name="project-description"></textarea>
                     </div>
                     <p class="font-weight-bold">Profiles configuration</p>
                     <div class="form-group">
                         <label for="">Developer</label>
-                        <input type="text" class="form-control text-truncate" placeholder="Enter the database address for your developer profile">
+                        <input type="text" class="form-control text-truncate" placeholder="Enter the database address for your developer profile" name="project-dev-db">
                     </div>
                     <div class="form-group">
                         <label for="">Testing</label>
-                        <input type="text" class="form-control text-truncate" placeholder="Enter the database address for your developer profile">
+                        <input type="text" class="form-control text-truncate" placeholder="Enter the database address for your testing profile" name="project-test-db">
                     </div>
                     <div class="form-group">
                         <label for="">Production</label>
-                        <input type="text" class="form-control text-truncate" placeholder="Enter the database address for your developer profile">
+                        <input type="text" class="form-control text-truncate" placeholder="Enter the database address for your production profile" name="project-pro-db">
                     </div>
                   </form>
             </div>
@@ -51,7 +51,7 @@
                     <p class="font-weight-bold">Packages</p>
                     <p data-toggle="modal" data-target=".bd-example-modal-lg" id="modal-button"><i class="fas fa-plus-square"></i></p>
                 </div>
-                <div class=" mt-3 border-danger border" id="packages-container">
+                <div class=" mt-3" id="packages-container">
                     <!--PACKAGES SELECTED-->
                                     
                 </div>
@@ -73,16 +73,19 @@
         <!--GENERATE PROJECT AND CANCEL BUTTONS-->
         <div class="row justify-content-center">
             <div class="col-lg-3  mt-3 ">
-                <div class=" align-items-center d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary mr-2">Generate</button>
-                    <button type="button" class="btn btn-outline-dark">&nbsp Cancel &nbsp</button>
+                <div class=" align-items-center d-flex justify-content-center mb-1">
+                    <button type="button" class="btn btn-primary mr-2" id="generate-project-button">Generate</button>
+                    <button type="button" class="btn btn-outline-dark" id="reset-project-button">&nbsp Cancel &nbsp</button>
                 </div>
             </div>
         </div>
     </div>
     <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.9.1/jszip.min.js" integrity="sha512-amNoSoOK3jIKx6qlDrv36P4M/h7vc6CHwiBU3XG9/1LW0ZSNe8E3iZL1tPG/VnfCrVrZc2Zv47FIJ7fyDX4DMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://kit.fontawesome.com/dc6611e35b.js" crossorigin="anonymous"></script>
     <script src="/js/flask-packages/main.js" type="module"></script>
+    <script src="/js/main.js" type="module"></script>
 </body>
 </html>

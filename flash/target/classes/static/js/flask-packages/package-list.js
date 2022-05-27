@@ -9,12 +9,12 @@ export function packageList(){
   })
   .then(r => {
     console.log(r.data)
+    window.localStorage.setItem('package-list', JSON.stringify(r.data))
     printPackages(r.data)
     printSelectedPackages(r.data)
   })
   .catch(e => {console.log(e)})
 }   
-
 
 function printPackages(packageList) {
   console.log("CARGANDO LOS DATOS")
@@ -53,7 +53,7 @@ function printSelectedPackages(packageList) {
     if(!$(packageID).hasClass("pkg-selected")){
         //Add option to packages container
         $("#packages-container").append(
-          `<div class="card shadow-sm">
+          `<div class="card shadow-sm mt-1 pkg-card">
           <div class="card-body" id="package-selected-${element.id}">
               <h5 class="card-title">${packageName}</h5>
               <div class="d-flex justify-content-between">
