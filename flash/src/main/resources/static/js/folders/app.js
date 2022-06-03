@@ -37,14 +37,14 @@ export class App{
     return `import os
 
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
+#from flask_sqlalchemy import SQLAlchemy
+#from flask_migrate import Migrate
 
 from config.config import config, template_dir, static_dir
-from app.routes.hello_routes import hello_blueprint
+from app.routes.hello_routes import hello_blueprint, error_handling_blueprint
 
-db = SQLAlchemy()
-migrate = Migrate()
+#db = SQLAlchemy()
+#migrate = Migrate()
 
 def create_app(config_name = 'default'):
     app = Flask(__name__, template_folder=template_dir, static_folder=static_dir)
@@ -58,8 +58,9 @@ def create_app(config_name = 'default'):
     #migrate.init_app(app, db)
 
     #Register your blueprints
-    app.register_blueprint(hello_blueprint, url_prefix="/welcome")
-
+    app.register_blueprint(hello_blueprint, url_prefix="/")
+    app.register_blueprint(error_handling_blueprint)
+    
     return app`;
   }
 }

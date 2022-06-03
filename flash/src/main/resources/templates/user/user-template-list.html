@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/user-template-list.css">
+    <link rel="stylesheet" href="/css/constants.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Flash</title>
+</head>
+<body>
+    <div class="container-flow">
+        <!--MENU NAVBAR-->
+        <div th:replace="fragments/main :: main-menu"></div>
+        <!--MAIN CONTENT-->
+        <div class="row justify-content-center mt-5">
+          <div class="col-9 ">
+            <h5 class="font-weight-bold text-center text-md-left">Your templates</h5>
+            <div class="mt-4 d-flex flex-wrap justify-content-center justify-content-md-start" id="template-list-container">
+                <!--LIST OF TEMPLATES GO HERE-->
+                <div class="card m-1" style="width: 17rem; height: 25rem;" data-toggle="modal" data-target="#template-modal">
+                  <img class="card-img-top" src="/img/user-img.jpg" alt="Template image" height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <p class="font-weight-bold text-center">Alexander Adam</p>
+                  </div>
+                </div>
+                <div class="card m-1" style="width: 17rem; height: 25rem;" data-toggle="modal" data-target="#template-modal">
+                  <img class="card-img-top" src="/img/user-img.jpg" alt="Template image" height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <p class="font-weight-bold text-center">Alexander Adam</p>
+                  </div>
+                </div>
+
+                <div class="card m-1" style="width: 17rem; height: 25rem;" data-toggle="modal" data-target="#template-modal">
+                  <img class="card-img-top" src="/img/user-img.jpg" alt="Template image" height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <p class="font-weight-bold text-center">Alexander Adam</p>
+                  </div>
+                </div>
+
+                <div class="card m-1" style="width: 17rem; height: 25rem;" data-toggle="modal" data-target="#template-modal">
+                  <img class="card-img-top" src="/img/user-img.jpg" alt="Template image" height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <p class="font-weight-bold text-center">Alexander Adam</p>
+                  </div>
+                </div>
+
+                <div class="card m-1" style="width: 17rem; height: 25rem;" data-toggle="modal" data-target="#template-modal">
+                  <img class="card-img-top" src="/img/user-img.jpg" alt="Template image" height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <p class="font-weight-bold text-center">Alexander Adam</p>
+                  </div>
+                </div>
+
+                <div class="card m-1" style="width: 17rem; height: 25rem;" data-toggle="modal" data-target="#template-modal">
+                  <img class="card-img-top" src="/img/user-img.jpg" alt="Template image" height="200px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Title</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                    <p class="font-weight-bold text-center">Alexander Adam</p>
+                  </div>
+                </div>
+                
+
+                
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--TEMPLATE INFORMATION MODAL-->
+    <div class="modal fade bd-example-modal-lg" id="template-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p>Template information</p>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter title">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Description</label>
+                <textarea name="" class="form-control" id="" placeholder="Enter description"></textarea>
+              </div>
+              <div class="d-flex flex-column flex-lg-row justify-content-lg-between">
+                <div class="d-flex flex-row justify-content-around">
+                  <form action="">
+                    <label for="" class="mr-1 my-auto">Delete</label>
+                    <input type="text" name="" id="" class="form-control mr-1" placeholder="Type 'YES' to delete">
+                    <button class="btn btn-danger">Delete</button>
+                  </form>
+                  
+                </div>
+                <div class="d-flex flex-column flex-lg-row mt-3 mt-lg-0">
+                  <button class="btn btn-danger mr-1">Cancel</button>
+                  <button class="btn blue-flash-b white-flash-c mt-1 mt-lg-0">Update</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--LOGIN MODAL-->
+    <th:block th:replace="fragments/main :: main-login-modal"></th:block>
+
+    <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.9.1/jszip.min.js" integrity="sha512-amNoSoOK3jIKx6qlDrv36P4M/h7vc6CHwiBU3XG9/1LW0ZSNe8E3iZL1tPG/VnfCrVrZc2Zv47FIJ7fyDX4DMA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://kit.fontawesome.com/dc6611e35b.js" crossorigin="anonymous"></script>
+    <script src="/js/flask-packages/main.js" type="module"></script>
+    <script src="/js/main.js" type="module"></script>
+</body>
+</html>

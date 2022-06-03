@@ -19,17 +19,22 @@
                         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley
                     </p>
-                    <button type="button" class="btn btn-outline-light font-weight-bold rounded-pill">New project</button>
+                    <a href="/flash/v1/project">
+                        <button class="btn btn-outline-light font-weight-bold rounded-pill">New project</button>
+                    </a>
                 </div>
             </div>
             <!--Right div-->
             <div class="col-lg-4  d-none d-lg-block  p-5 text-center white-flash-c">
-                <img src="/img/home-icon.svg" alt="" class="img-fluid">
+                <img src="/img/home-icon.png" alt="" class="img-fluid">
                 <h3 class="font-weight-bold">1000</h3>
                 <p class="font-weight-light">coders has visited this page</p>
             </div>
         </div>
    </div>
+    <!--LOGIN MODAL-->
+    <th:block th:replace="fragments/main :: main-login-modal"></th:block>
+
     <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
 </body>
 </html>

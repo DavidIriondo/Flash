@@ -21,7 +21,7 @@
                 <!--Main tag-->
             <nav class="navbar navbar-expand-lg ">
                 <!--Logo tag-->
-                <a class="navbar-brand white-flash-c">Flash</a>
+                <a class="nav-link white-flash-c" href="/flash/v1/home"><h5 class="mb-0">Flash</h5></a>
                 <!--Button, appers when menu is collpased-->
                 <button class="navbar-toggler justify-content-end" type="button" data-toggle="collapse" data-target="#menu">
                     <span class="navbar-toggler-icon"></span>
@@ -31,9 +31,9 @@
                     <nav class="navbar-nav">
                     <a class="nav-link white-flash-c" href="/flash/v1/home">Home</a>
                     <a class="nav-link white-flash-c" href="/flash/v1/project">Projects</a>
-                    <a class="nav-link white-flash-c disabled" href="#">Template</a>
+                    <a class="nav-link white-flash-c" href="/flash/v1/template">Template</a>
                     <a class="nav-link white-flash-c" href="/flash/v1/about-us">About us</a>
-                    <a class="nav-link white-flash-c disabled" href="#">Login</a>
+                    <a class="nav-link white-flash-c" href="#" data-toggle="modal" data-target="#login-modal">Login</a>
                     </nav>
                 </div>
             </nav>
@@ -42,10 +42,83 @@
         <!--Main content-->
     </div>
 
+    <th:block th:fragment="main-login-modal">
+        <!--LOGIN MODAL-->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header justify-content-center black-flash-c">
+                    <h4 class="modal-title" id="exampleModalLabel">Login</h4>
+                </div>
+                <div class="modal-body black-flash-c">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                          <a href="#"><small class="text-primary">Forgot password?</small></a>
+                        </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn white-flash-c blue-flash-b btn-block">Login</button>
+                            <button type="button" class="btn white-flash-c blue-flash-b btn-block" data-dismiss="modal" data-toggle="modal" data-target="#register-modal">Quick register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                </div>
+                </div>
+            </div>
+        </div>
+         <!--REGISTER MODAL-->
+         <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header justify-content-center black-flash-c">
+                    <h4 class="modal-title" id="exampleModalLabel">REGISTER</h4>
+                </div>
+                <div class="modal-body black-flash-c">
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Email</label>
+                          <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="" placeholder="Enter password">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Repeat password</label>
+                            <input type="password" class="form-control" id="" placeholder="Repeat your password">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter name">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Surname</label>
+                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter surname">
+                          </div>
+                        <div class="mt-4">
+                            <button type="submit" class="btn white-flash-c blue-flash-b btn-block">Register</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    
+                </div>
+                </div>
+            </div>
+        </div>
+    </th:block>
+
     <th:block th:fragment="main-bootstrap-scripts">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     </th:block>
 </body>
 </html>

@@ -43,5 +43,8 @@ function getpackageList() {
     return list;
 }
 
-
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  
 console.log("HELLO CURIOUS USER!!")

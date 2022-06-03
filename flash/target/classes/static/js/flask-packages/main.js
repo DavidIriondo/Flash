@@ -1,5 +1,6 @@
-import {packageList} from "./package-list.js"
+import {packageList, packagesListCount} from "./package-list.js"
 
 $(document).ready(function () {
   packageList();
+  packagesListCount();
 });

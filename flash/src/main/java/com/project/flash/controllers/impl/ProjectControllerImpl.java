@@ -23,4 +23,22 @@ public class ProjectControllerImpl implements ProjectController{
         // TODO Auto-generated method stub
         return "file";
     }
+
+    @GetMapping("/user")
+    public String userPage() {
+        // TODO Auto-generated method stub
+        return "user/user-profile";
+    }
+
+    @GetMapping("/upload-template")
+    public String uploadTemplatePage() {
+        // TODO Auto-generated method stub
+        return "user/user-upload-template";
+    }
+
+    @GetMapping("/user-template-list")
+    public String userTemplateListPage() {
+        // TODO Auto-generated method stub
+        return "user/user-template-list";
+    }
 }

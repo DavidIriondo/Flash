@@ -10,6 +10,7 @@ public class WebConstants {
     public static final String HOME_PAGE = "/home";
     public static final String ABOUT_PAGE = "/about-us";
     public static final String PROJECT_PAGE = "/project";
+    public static final String TEMPLATE_PAGE = "/template";
 
     //Resources
     public static final String RESOURCE_ID = "/{id}";

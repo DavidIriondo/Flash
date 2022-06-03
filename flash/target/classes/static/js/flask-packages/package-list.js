@@ -22,7 +22,7 @@ function printPackages(packageList) {
           $("#packages-options-container").append(
             `<div class="card shadow-sm card-hover mt-1 " id="package-option-${element.id}">
             <div class="card-body">
-                <h5 class="card-title">${element.name}</h5>
+                <h5 class="card-title">${element.name} <span class="badge badge-light">${element.version}</span></h5>
                 <div class="d-flex justify-content-between">
                     <p class="card-text mr-2 text-truncate">
                         ${element.description}
@@ -55,7 +55,7 @@ function printSelectedPackages(packageList) {
         $("#packages-container").append(
           `<div class="card shadow-sm mt-1 pkg-card">
           <div class="card-body" id="package-selected-${element.id}">
-              <h5 class="card-title">${packageName}</h5>
+              <h5 class="card-title">${packageName} <span class="badge badge-light">${element.version}</span></h5>
               <div class="d-flex justify-content-between">
                   <p class="card-text mr-2 mb-0 text-truncate">
                     ${packageDescription}
@@ -73,12 +73,14 @@ function printSelectedPackages(packageList) {
     }else{
       alert("Package already added :)")
     }
+    //Eliminate or add 'no pakcage selected'
+    packagesListCount();
    })
 
     let packageSelecteId = "#package-selected-" + element.id;
     let deleteButtonId = "#dlt-btn-" + element.id;
 
-    //PACKAGES SELECTED
+    //DELETING PACKAGES FROM SELECTED LIST
     $("#packages-container").on('click', deleteButtonId,  function name() {
   
       console.log("Has eliminado el paquete de " + packageName);
@@ -87,18 +89,31 @@ function printSelectedPackages(packageList) {
       $(packageSelecteId).parent().remove();
   
   
-      //Descativate option
+      //Remove desactivate style
       $(packageID).removeClass("card-desactivated");
-      //Add desactivate style
+      //Add activate style
       $(packageID).addClass("card-hover");
       //Remove boolean class
       $(packageID).removeClass("pkg-selected");
   
+      //Check if there is not packages selected
+      packagesListCount();
     })
-
-
-
   });
 
-  
+}
+
+
+export function packagesListCount() {
+  let count = $("#packages-container").children().length;
+
+  //Add or remove No package selected tag
+  if(count <= 0){
+    $("#packages-container").append(
+      `<p class="font-italic" id="no-packages-selected">-No packages selected-</p>`
+    )
+  }else{
+    $("#no-packages-selected").remove()
+  }
+
 }

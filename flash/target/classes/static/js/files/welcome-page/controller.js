@@ -11,6 +11,10 @@ import app
 
 #Welcome page controller
 def welcome():
-    return render_template("hello.html")`;
-  }
+    return render_template("hello.html")
+    
+def handle_error(err):
+    return render_template("error.html")`;
+
+S}
 }
