@@ -19,6 +19,7 @@ public class TemplateControllerImpl implements TemplateController{
     return "template/templates.html";
   }
   
+  //This page is loaded when client click over one template in template store,  here you can download the template
   @GetMapping("/template-information")
   public String templateInformationPage() {
     

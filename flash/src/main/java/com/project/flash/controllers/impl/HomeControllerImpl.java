@@ -1,9 +1,11 @@
 package com.project.flash.controllers.impl;
 
 import com.project.flash.controllers.HomeController;
+import com.project.flash.forms.UserRegisterForm;
 import com.project.flash.utils.constants.WebConstants;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,15 +15,9 @@ public class HomeControllerImpl implements HomeController{
 
     @Override
     @GetMapping()
-    public String homePage() {
-        // TODO Auto-generated method stub
+    public String homePage(Model model) {
+        model.addAttribute("UserRegisterForm", new UserRegisterForm());
         return "home/home";
     }
 
-
-    @GetMapping("/template")
-    public String templatePage() {
-        // TODO Auto-generated method stub
-        return "templates/main";
-    }
 }

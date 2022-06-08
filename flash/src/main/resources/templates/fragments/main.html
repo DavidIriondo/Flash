@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
    <th:block th:fragment="main-head">
         <meta charset="UTF-8">
@@ -85,26 +85,27 @@
                     <h4 class="modal-title" id="exampleModalLabel">REGISTER</h4>
                 </div>
                 <div class="modal-body black-flash-c">
-                    <form>
+
+                    <form method="post" action="#" th:action = "@{/flash/v1/home/register-user}" th:object="${UserRegisterForm}">
                         <div class="form-group">
                           <label for="exampleInputEmail1">Email</label>
-                          <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
+                          <input th:field="*{email}" type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter email">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Password</label>
-                          <input type="password" class="form-control" id="" placeholder="Enter password">
+                          <input th:field="*{password}" type="password" class="form-control" id="" placeholder="Enter password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Repeat password</label>
-                            <input type="password" class="form-control" id="" placeholder="Repeat your password">
+                            <input th:field="*{repeatPassword}" type="password" class="form-control" id="" placeholder="Repeat your password">
                           </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter name">
+                            <input th:field="*{name}"  type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter name">
                           </div>
                           <div class="form-group">
                             <label for="exampleInputEmail1">Surname</label>
-                            <input type="email" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter surname">
+                            <input th:field="*{surname}" type="text" class="form-control" id="" aria-describedby="emailHelp" placeholder="Enter surname">
                           </div>
                         <div class="mt-4">
                             <button type="submit" class="btn white-flash-c blue-flash-b btn-block">Register</button>
@@ -124,6 +125,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+
     </th:block>
 </body>
 </html>
