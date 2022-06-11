@@ -1,7 +1,6 @@
 package com.project.flash.controllers.impl;
 
 import com.project.flash.controllers.HomeController;
-import com.project.flash.forms.UserRegisterForm;
 import com.project.flash.utils.constants.WebConstants;
 
 import org.springframework.stereotype.Controller;
@@ -15,8 +14,7 @@ public class HomeControllerImpl implements HomeController{
 
     @Override
     @GetMapping()
-    public String homePage(Model model) {
-        model.addAttribute("UserRegisterForm", new UserRegisterForm());
+    public String homePage() {
         return "home/home";
     }
 
