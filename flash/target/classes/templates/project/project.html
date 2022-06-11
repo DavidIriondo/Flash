@@ -82,7 +82,50 @@
             </div>
         </div>
     </div>
+    <!--AFTER DOWNLOAD PROJECT SUCESFULLY MODAL-->
+    <div class="modal" id="download-project-ok" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header blue-flash-b white-flash-c">
+              <h5 class="modal-title">Flash 🚀</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+                <h4>Before you start 📝</h4>
+                <ul class="list-group text-center" >
+                    <li class="list-group-item">Create virtual enviroment</li>
+                    <li class="list-group-item">Update package list : <strong>$ pip install -r requirements.txt</strong></li>
+                    <li class="list-group-item">Add Flask app enviroment value : <strong>FLASK_APP=app</strong></li>
+                    <li class="list-group-item">Enjoy!</li>
+                  </ul>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+          <!--AFTER DOWNLOAD PROJECT WRONG MODAL-->
+    <div class="modal" id="download-project-bad" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header red-flash-b white-flash-c">
+              <h5 class="modal-title">Flash 🚀</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body text-center">
+                <h4>Sorry but something gone wrong...</h4>
+                <div class="tenor-gif-embed" data-postid="14419071" data-share-method="host" data-aspect-ratio="1.07914" data-width="100%"><a href="https://tenor.com/view/sad-cats-sadness-sad-cat-gif-14419071">Sad Cats GIF</a>from <a href="https://tenor.com/search/sad-gifs">Sad GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
     <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

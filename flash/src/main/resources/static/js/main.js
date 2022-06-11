@@ -10,16 +10,23 @@ $("#generate-project-button").click(function () {
     let map = createMap($("#project-data-form").serializeArray());
     let list = getpackageList();
 
-    //Creating project
-    let project = new Project(map, list, zip);
-    project.buildProject();
+    try {
+        //Creating project
+        let project = new Project(map, list, zip);
+        project.buildProject();
 
-    //Descargamos el proyecto 
-    project.getProject().generateAsync({type:"blob"}).then(function (blob) { 
-        saveAs(blob, project.getName());                          
-    }, function (err) {
-        jQuery("#generate-project-button").text(err);
-    });
+        //Descargamos el proyecto 
+        project.getProject().generateAsync({type:"blob"}).then(function (blob) { 
+            //saveAs(blob, project.getName());                          
+        }, function (err) {
+            jQuery("#generate-project-button").text(err);
+        });
+
+        //Show sucessfully modal
+        $('#download-project-bad').modal('show')
+    } catch (error) {
+        console.log(error)
+    }
 })
 
 

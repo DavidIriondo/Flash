@@ -1,4 +1,13 @@
-
+.code-container{
+    background-color: rgb(8, 27, 75);
+    color: rgb(255, 255, 255);
+    border-radius: 16px;
+    display: block;
+    overflow: auto;
+    padding: 1em;
+    white-space: normal;
+    overflow-wrap: normal;
+}
 
 @media (min-width: 992px) {
     .vertical-text{

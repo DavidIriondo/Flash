@@ -14,7 +14,7 @@ public class AboutUsControllerImpl implements AboutUsController{
     @Override   
     @GetMapping()
     public String aboutUsPage() {
-        return "about-us/about-us";
+        return "about/about";
     }
     
 }

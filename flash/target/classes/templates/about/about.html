@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <th:block th:replace="fragments/main :: main-head">
+    </th:block>
+    <link rel="stylesheet" href="/css/about-us.css">
+</head>
+<body>
+    <div class="container-flow white-flash-b">
+            <!--MENU-->
+        <div th:replace="fragments/main :: main-menu"></div>
+        <div style="height: 50px;"></div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 ml-4">
+                <h1 class="text-center">Project structure</h1>
+                <hr>
+                <p>
+                    Welcome to Flash project structure for flask, in this topic we will explain how and why is made id. So lets see the project structure:
+                </p>
+                <div class=" code-container">
+                    <pre>
+                        <code class="text-white">
+                    ~/Project     
+                        |__ /app 
+                            |__/controllers  #Determinate what happend and what response to send when someone make a request
+                            |__/models       #Create your models or entities
+                            |__/routes       #Write here the Blueprint routes
+                            |__/service      #Do the stuff your models are allow to do
+                            |__/static       #Store your static files like css, js, images...etc
+                            |__/templates    #Store your html templates
+                            |--__init_.py
+                        |__/config 
+                            |--config.py
+                        |__/db
+                        |__/migrations
+                        |__/tests
+                        |__/venv
+                        |--app.py  
+                        |--README.txt
+                        |--requirements.txt       
+                        </code>
+                    </pre>
+                </div>
+                <br>
+                <p>
+                    After this you may have some questions about the project and why we choose this structure.
+                    First of all, we have built this structure following the MVC design pattern. If have knowledge of this pattern
+                    you may know that your main work is under <strong>models</strong>, <strong>controllers</strong> and <strong>template</strong>(view) folders.
+                    OK lets start from the beginning and explain why we create all of this folders.
+                </p>
+                <div>
+                    <h4>~/Project/app</h4>
+                    <p>
+                        Here we have our project itself from our models to our views, we assume you have knowledge about Flask (or any backend framework) and how it works
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/app/__init__.py</h4>
+                    <p>
+                        Since we are using application factory to create our Flask application, here is where the create_app() method is placed, and 
+                        where we do the required stuff in order to create our application object. For more information about Application Factory 
+                        click <a href="https://flask.palletsprojects.com/en/2.1.x/tutorial/factory/">here</a> 
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/config</h4>
+                    <p>
+                        Config folder is where we put all our config files, this is the config file that we use:
+                    </p>
+                    <div class=" code-container">
+                        <pre>
+                            <code class="text-white">
+import os
+
+basedir = os.path.relpath("../db")
+
+template_dir = os.path.realpath('app/templates')
+static_dir = os.path.realpath('app/static')
+
+
+class BaseConfig():
+SECRET_KEY = os.environ.get('SECRET_KEY') or ' 12345' #change this secret key please XD
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+class DevelopmentConfig(BaseConfig):
+DEBUG = True
+SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'data-development.sqlite')
+
+PROFILE = " * Developer profile activated"
+
+class TestingConfig(BaseConfig):
+TESTING = True
+SQLALCHEMY_DATABASE_URI = os.environ.get('TEST_DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'data-testing.sqlite')
+
+PROFILE = " * Testing profile activated"
+
+class ProductionConfig(BaseConfig):
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'data-production.sqlite')
+
+PROFILE = " * Production profile activated"
+
+
+config = {
+'development': DevelopmentConfig,
+'testing': TestingConfig,
+'production': ProductionConfig,
+
+'default': DevelopmentConfig
+}
+                            </code>
+                        </pre>
+                    </div>
+                    <br>
+                    <p>
+                        As you can see you have 3 config class : DevelopmentConfig, TestingConfig and ProductionConfig
+                        To choose one add a enviromment variable called <strong>'FLASK_ENV'</strong> and one of the the next values development, testing or production
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/db</h4>
+                    <p>
+                        All the SQLite files that can be created in your Flask application is placed here, dont worry  beacouse we already configurate
+                        this project to reach this behaviour
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/migrations</h4>
+                    <p>
+                        This folder is necesary to exist if you want to use <a href="https://www.sqlalchemy.org/">SQL Alchemy</a>
+                        otherwise feel free to remove it from your project
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/tests</h4>
+                    <p>
+                        Yes, obviously this folder contain all your test files. 
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/app.py</h4>
+                    <p>
+                        OK this file is important because is the entry point of your application and where the application object itself is created
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/--requirements.txt</h4>
+                    <p>
+                        This requirements.txt file is used for specifying what python packages are required to run the project you are looking at
+                    </p>
+                </div>
+                <div>
+                    <h4>~/Project/README.txt</h4>
+                    <p>
+                        This is a brief description of your application.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="height: 50px;"></div>
+    <th:block th:replace="fragments/main :: main-bootstrap-scripts"></th:block>
+</body>
+</html>
