@@ -17,15 +17,16 @@ $("#generate-project-button").click(function () {
 
         //Descargamos el proyecto 
         project.getProject().generateAsync({type:"blob"}).then(function (blob) { 
-            //saveAs(blob, project.getName());                          
+            saveAs(blob, project.getName());                          
         }, function (err) {
             jQuery("#generate-project-button").text(err);
         });
 
         //Show sucessfully modal
-        $('#download-project-bad').modal('show')
+        $('#download-project-ok').modal('show')
     } catch (error) {
         console.log(error)
+        $('#download-project-bad').modal('show')
     }
 })
 
