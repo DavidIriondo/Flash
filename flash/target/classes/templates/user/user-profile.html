@@ -25,23 +25,23 @@
           </div>
           <!--2º COLUMN-->
           <div class="col-lg-3 black-flash-c p-5 p-lg-2">
-            <form>
+            <form action="#" th:object="${UserObject}">
               <p class="font-weight-bold">User information</p>
               <div class="form-group">
                 <label for="exampleInputEmail1">Name</label>
-                <input type="text" class="form-control" id="" placeholder="Name" name="name">
+                <input type="text" class="form-control" id="" placeholder="Name" name="name" th:value="*{name}">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Surname</label>
-                <input type="text" class="form-control" id="" placeholder="Surname" name="surname">
+                <input type="text" class="form-control" id="" placeholder="Surname" name="surname" th:value="*{surname}">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Email</label>
-                <input type="email" class="form-control text-truncate" id="" placeholder="Surname" name="email">
+                <input type="email" class="form-control text-truncate" id="" placeholder="Surname" name="email" th:value="*{email}">
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">Description</label>
-                <textarea type="text" class="form-control " placeholder="Enter the description" name="description"></textarea>
+                <textarea type="text" class="form-control " placeholder="Enter the description" name="description" th:value="*{description}"></textarea>
               </div>
               <button type="submit" class="btn blue-flash-b white-flash-c btn-block text-truncate">Update information</button>
             </form>

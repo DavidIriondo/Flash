@@ -8,5 +8,5 @@ import org.springframework.ui.Model;
 
 public interface RegisterController {
   
-  String registerPage(UserRegisterForm form, Model model);
+  String registerPage(HttpServletRequest request , UserRegisterForm form, Model model);
 }

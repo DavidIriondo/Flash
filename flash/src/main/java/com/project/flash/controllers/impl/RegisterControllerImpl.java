@@ -1,16 +1,24 @@
 package com.project.flash.controllers.impl;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.project.flash.controllers.RegisterController;
+import com.project.flash.entities.User;
 import com.project.flash.forms.UserRegisterForm;
+import com.project.flash.security.utils.CustomUserDetails;
 import com.project.flash.service.impl.UserServiceImpl;
 import com.project.flash.utils.constants.WebConstants;
 
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,19 +33,13 @@ public class RegisterControllerImpl implements RegisterController{
 
   @Override
   @PostMapping("/register-user")
-  public String registerPage(@ModelAttribute("UserRegisterForm") UserRegisterForm form,  Model model) {
-    System.out.println("***REGISTRO DE USUARIO***");
-    System.out.println(form.getEmail());
-    System.out.println(form.getPassword());
-    System.out.println(form.getRepeatPassword());
-    System.out.println(form.getName());
-    System.out.println(form.getSurname());
+  public String registerPage(HttpServletRequest request, @ModelAttribute("UserRegisterForm") UserRegisterForm form,  Model model) {
 
-    userServiceImpl.createUserByForm(form);
+   userServiceImpl.createUserByForm(form);
 
-    return "redirect:" + WebConstants.APPLICATION_NAME + WebConstants.API_VERSION_1 + WebConstants.HOME_PAGE + "/user-registered";
+
+    return "redirect:" + WebConstants.APPLICATION_NAME + WebConstants.API_VERSION_1 + WebConstants.HOME_PAGE;
 
   }
 
-  
 }

@@ -48,20 +48,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .anyRequest().authenticated()
       .and()
     .formLogin()
-      .loginPage("/flash/v1/home") // MY DEFAULT LOGIN PAGE
+      .loginPage("/flash/v1/login")// MY DEFAULT LOGIN PAGE
+      .defaultSuccessUrl("/flash/v1/user/profile") 
+      .failureUrl("/flash/v1/login")
       .permitAll()
       .and()
     .logout() //THE DEFAULT LOGOUT CONTROLLER, JUST CALL "/logout" URL AND WILL LOGOUT
       .permitAll();
   }
  
+  
   @Override
   protected void configure(AuthenticationManagerBuilder auth) throws Exception {
     auth.userDetailsService(customUserDetails).passwordEncoder(bCrypt);
   }
 
-
-/*   @Bean
+  /*
+ @Bean
   @Override
   protected UserDetailsService userDetailsService() {
     UserDetails user =

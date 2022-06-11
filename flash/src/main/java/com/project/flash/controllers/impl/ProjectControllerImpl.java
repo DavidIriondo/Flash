@@ -1,9 +1,12 @@
 package com.project.flash.controllers.impl;
 
 import com.project.flash.controllers.ProjectController;
+import com.project.flash.forms.UserRegisterForm;
 import com.project.flash.utils.constants.WebConstants;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -13,7 +16,11 @@ public class ProjectControllerImpl implements ProjectController{
     
     @Override
     @GetMapping()
-    public String projectPage() {
+    public String projectPage(Model model, Authentication authentication) {
+        model.addAttribute("UserRegisterForm", new UserRegisterForm());
+
+        System.out.println(authentication.getName());
+
         // TODO Auto-generated method stub
         return "project/project";
     }
